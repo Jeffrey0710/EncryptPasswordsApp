@@ -160,7 +160,8 @@ namespace EncryptPasswords
 
         private void BtnOpenFile_Click(object sender, EventArgs e)
         {
-            
+            DataFile formDataFile = new DataFile();
+            formDataFile.ShowDialog();
         }
     }
 }

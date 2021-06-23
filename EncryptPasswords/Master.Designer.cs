@@ -135,7 +135,7 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnSave.BackColor = System.Drawing.Color.DodgerBlue;
             this.BtnSave.Font = new System.Drawing.Font("Lucida Console", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.BtnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.BtnSave.Location = new System.Drawing.Point(446, 219);
@@ -148,7 +148,7 @@
             // 
             // BtnOpenFile
             // 
-            this.BtnOpenFile.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnOpenFile.BackColor = System.Drawing.Color.DodgerBlue;
             this.BtnOpenFile.Font = new System.Drawing.Font("Lucida Console", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.BtnOpenFile.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.BtnOpenFile.Location = new System.Drawing.Point(305, 403);
@@ -185,7 +185,7 @@
             // 
             // BtnSearch
             // 
-            this.BtnSearch.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnSearch.BackColor = System.Drawing.Color.DodgerBlue;
             this.BtnSearch.Font = new System.Drawing.Font("Lucida Console", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.BtnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.BtnSearch.Location = new System.Drawing.Point(163, 219);
@@ -200,7 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(760, 485);
             this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.label6);
