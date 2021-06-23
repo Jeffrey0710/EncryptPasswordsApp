@@ -1,6 +1,6 @@
 ﻿namespace EncryptPasswords
 {
-    partial class Form1
+    partial class Master
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -168,7 +168,7 @@
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.DarkOrange;
+            this.label6.BackColor = System.Drawing.Color.Goldenrod;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label6.Font = new System.Drawing.Font("Lucida Console", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
@@ -193,7 +193,7 @@
             this.BtnSearch.UseVisualStyleBackColor = false;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
-            // Form1
+            // Master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -216,7 +216,8 @@
             this.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form1";
+            this.Name = "Master";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Encrypt Passwords";
             this.ResumeLayout(false);
             this.PerformLayout();

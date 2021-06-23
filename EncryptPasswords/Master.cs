@@ -11,9 +11,9 @@ using System.IO;
 
 namespace EncryptPasswords
 {
-    public partial class Form1 : Form
+    public partial class Master : Form
     {
-        public Form1()
+        public Master()
         {
             InitializeComponent();
         }
