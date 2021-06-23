@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace EncryptPasswords
 {
     public partial class Master : Form
     {
+        public static string KeyCode = "gkft93uif43hu514";
+
         public Master()
         {
             InitializeComponent();
@@ -27,9 +30,9 @@ namespace EncryptPasswords
 
             StreamWriter info = File.AppendText("InfoFile.txt");
 
-            info.Write(txtSite.Text + "|");
-            info.Write(txtUser.Text + "|");
-            info.Write(txtPassword.Text + "|");
+            info.Write(TxtSite.Text + "|");
+            info.Write(TxtUser.Text + "|");
+            info.Write(TxtPassword.Text + "|");
             info.WriteLine();
             info.Close();
 
@@ -42,11 +45,11 @@ namespace EncryptPasswords
             {
                 array = data.Split(separate);
 
-                if (array[0].Trim().Equals(txtSite.Text) & array[1].Trim().Equals(txtUser.Text))
+                if (array[0].Trim().Equals(TxtSite.Text) & array[1].Trim().Equals(TxtUser.Text))
                 {
-                    temp.Write(txtSite.Text + "|");
-                    temp.Write(txtUser.Text + "|");
-                    temp.Write(txtPassword.Text + "|");
+                    temp.Write(TxtSite.Text + "|");
+                    temp.Write(TxtUser.Text + "|");
+                    temp.Write(TxtPassword.Text + "|");
                     temp.WriteLine();
                     find = true;
                 }
@@ -72,9 +75,9 @@ namespace EncryptPasswords
             lect.Close();
             temp.Close();
 
-            txtSite.Clear();
-            txtUser.Clear();
-            txtPassword.Clear();
+            TxtSite.Clear();
+            TxtUser.Clear();
+            TxtPassword.Clear();
 
             File.Delete("InfoFile.txt");
             File.Move("Temporary.txt", "InfoFile.txt");
@@ -94,17 +97,70 @@ namespace EncryptPasswords
             {
                 array = data.Split(separate);
 
-                if (array[0].Trim().Equals(txtSite.Text) & array[1].Trim().Equals(txtUser.Text))
+                if (array[0].Trim().Equals(TxtSite.Text) & array[1].Trim().Equals(TxtUser.Text))
                 {
-                    txtUncryptPass.Text = array[2].Trim();
+                    TxtUncryptPass.Text = array[2].Trim();
                     find = true;
                 }
                 data = lect.ReadLine();
             }
 
             lect.Close();
-            txtSite.Clear();
-            txtUser.Clear();
+            TxtSite.Clear();
+            TxtUser.Clear();
+        }
+
+        public string Encrypt(string pass, string pkey) 
+        {
+            byte[] keyArray;
+            byte[] passEncrypt = Encoding.UTF8.GetBytes(pass); 
+
+            keyArray = Encoding.UTF8.GetBytes(pkey);   
+
+            var tdes = new TripleDESCryptoServiceProvider();
+            tdes.Key = keyArray;
+            tdes.Mode = CipherMode.ECB;
+            tdes.Padding = PaddingMode.PKCS7;
+
+            ICryptoTransform cTransform = tdes.CreateEncryptor();
+            byte[] result = cTransform.TransformFinalBlock(passEncrypt, 0, passEncrypt.Length);
+            tdes.Clear();
+
+            return Convert.ToBase64String(result, 0, result.Length);
+        }
+
+        public string Uncrypt(string pass, string pkey)
+        {
+            byte[] keyArray;
+            byte[] passUncrypt = Convert.FromBase64String(pass);
+
+            keyArray = Encoding.UTF8.GetBytes(pkey);  
+
+            var tdes = new TripleDESCryptoServiceProvider();
+            tdes.Key = keyArray;
+            tdes.Mode = CipherMode.ECB;
+            tdes.Padding = PaddingMode.PKCS7;
+
+            ICryptoTransform cTransform = tdes.CreateDecryptor();
+            byte[] result = cTransform.TransformFinalBlock(passUncrypt, 0, passUncrypt.Length); 
+            tdes.Clear();
+
+            return Encoding.UTF8.GetString(result);
+        }
+
+        private void BtnEncrypt_Click(object sender, EventArgs e)
+        {
+            TxtPassword.Text = Encrypt(TxtPassword.Text, KeyCode);
+        }
+
+        private void BtnUncrypt_Click(object sender, EventArgs e)
+        {
+            TxtUncryptPass.Text = Uncrypt(TxtUncryptPass.Text, KeyCode);
+        }
+
+        private void BtnOpenFile_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

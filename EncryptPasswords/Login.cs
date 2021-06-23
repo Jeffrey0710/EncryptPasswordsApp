@@ -45,7 +45,7 @@ namespace EncryptPasswords
                 TxtPassword.Clear();
                 Master formMaster = new Master();
                 formMaster.ShowDialog();
-                Close();
+                this.Hide();
             }
         }
     }

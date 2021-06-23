@@ -31,14 +31,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnEncrypt = new System.Windows.Forms.Button();
-            this.btnUncrypt = new System.Windows.Forms.Button();
-            this.txtSite = new System.Windows.Forms.TextBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUncryptPass = new System.Windows.Forms.TextBox();
+            this.BtnEncrypt = new System.Windows.Forms.Button();
+            this.BtnUncrypt = new System.Windows.Forms.Button();
+            this.TxtSite = new System.Windows.Forms.TextBox();
+            this.TxtUser = new System.Windows.Forms.TextBox();
+            this.TxtPassword = new System.Windows.Forms.TextBox();
+            this.TxtUncryptPass = new System.Windows.Forms.TextBox();
             this.BtnSave = new System.Windows.Forms.Button();
-            this.btnOpenFile = new System.Windows.Forms.Button();
+            this.BtnOpenFile = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.BtnSearch = new System.Windows.Forms.Button();
@@ -74,62 +74,64 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Password";
             // 
-            // btnEncrypt
+            // BtnEncrypt
             // 
-            this.btnEncrypt.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnEncrypt.FlatAppearance.BorderColor = System.Drawing.Color.SlateGray;
-            this.btnEncrypt.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.btnEncrypt.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEncrypt.Location = new System.Drawing.Point(597, 123);
-            this.btnEncrypt.Name = "btnEncrypt";
-            this.btnEncrypt.Size = new System.Drawing.Size(120, 40);
-            this.btnEncrypt.TabIndex = 4;
-            this.btnEncrypt.Text = "Encrypt";
-            this.btnEncrypt.UseVisualStyleBackColor = false;
+            this.BtnEncrypt.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnEncrypt.FlatAppearance.BorderColor = System.Drawing.Color.SlateGray;
+            this.BtnEncrypt.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.BtnEncrypt.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.BtnEncrypt.Location = new System.Drawing.Point(597, 123);
+            this.BtnEncrypt.Name = "BtnEncrypt";
+            this.BtnEncrypt.Size = new System.Drawing.Size(120, 40);
+            this.BtnEncrypt.TabIndex = 4;
+            this.BtnEncrypt.Text = "Encrypt";
+            this.BtnEncrypt.UseVisualStyleBackColor = false;
+            this.BtnEncrypt.Click += new System.EventHandler(this.BtnEncrypt_Click);
             // 
-            // btnUncrypt
+            // BtnUncrypt
             // 
-            this.btnUncrypt.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnUncrypt.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.btnUncrypt.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUncrypt.Location = new System.Drawing.Point(597, 331);
-            this.btnUncrypt.Name = "btnUncrypt";
-            this.btnUncrypt.Size = new System.Drawing.Size(120, 40);
-            this.btnUncrypt.TabIndex = 5;
-            this.btnUncrypt.Text = "Uncrypt";
-            this.btnUncrypt.UseVisualStyleBackColor = false;
+            this.BtnUncrypt.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnUncrypt.Font = new System.Drawing.Font("Lucida Console", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.BtnUncrypt.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.BtnUncrypt.Location = new System.Drawing.Point(597, 331);
+            this.BtnUncrypt.Name = "BtnUncrypt";
+            this.BtnUncrypt.Size = new System.Drawing.Size(120, 40);
+            this.BtnUncrypt.TabIndex = 5;
+            this.BtnUncrypt.Text = "Uncrypt";
+            this.BtnUncrypt.UseVisualStyleBackColor = false;
+            this.BtnUncrypt.Click += new System.EventHandler(this.BtnUncrypt_Click);
             // 
-            // txtSite
+            // TxtSite
             // 
-            this.txtSite.Location = new System.Drawing.Point(12, 133);
-            this.txtSite.Name = "txtSite";
-            this.txtSite.Size = new System.Drawing.Size(150, 21);
-            this.txtSite.TabIndex = 6;
-            this.txtSite.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtSite.Location = new System.Drawing.Point(12, 133);
+            this.TxtSite.Name = "TxtSite";
+            this.TxtSite.Size = new System.Drawing.Size(150, 21);
+            this.TxtSite.TabIndex = 6;
+            this.TxtSite.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtUser
+            // TxtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(190, 133);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(150, 21);
-            this.txtUser.TabIndex = 7;
-            this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtUser.Location = new System.Drawing.Point(190, 133);
+            this.TxtUser.Name = "TxtUser";
+            this.TxtUser.Size = new System.Drawing.Size(150, 21);
+            this.TxtUser.TabIndex = 7;
+            this.TxtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtPassword
+            // TxtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(367, 133);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(200, 21);
-            this.txtPassword.TabIndex = 8;
-            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtPassword.Location = new System.Drawing.Point(367, 133);
+            this.TxtPassword.Name = "TxtPassword";
+            this.TxtPassword.Size = new System.Drawing.Size(200, 21);
+            this.TxtPassword.TabIndex = 8;
+            this.TxtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtUncryptPass
+            // TxtUncryptPass
             // 
-            this.txtUncryptPass.Location = new System.Drawing.Point(12, 341);
-            this.txtUncryptPass.Name = "txtUncryptPass";
-            this.txtUncryptPass.Size = new System.Drawing.Size(555, 21);
-            this.txtUncryptPass.TabIndex = 9;
-            this.txtUncryptPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtUncryptPass.Location = new System.Drawing.Point(12, 341);
+            this.TxtUncryptPass.Name = "TxtUncryptPass";
+            this.TxtUncryptPass.Size = new System.Drawing.Size(555, 21);
+            this.TxtUncryptPass.TabIndex = 9;
+            this.TxtUncryptPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BtnSave
             // 
@@ -144,17 +146,18 @@
             this.BtnSave.UseVisualStyleBackColor = false;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
-            // btnOpenFile
+            // BtnOpenFile
             // 
-            this.btnOpenFile.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnOpenFile.Font = new System.Drawing.Font("Lucida Console", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.btnOpenFile.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnOpenFile.Location = new System.Drawing.Point(305, 403);
-            this.btnOpenFile.Name = "btnOpenFile";
-            this.btnOpenFile.Size = new System.Drawing.Size(150, 50);
-            this.btnOpenFile.TabIndex = 11;
-            this.btnOpenFile.Text = "Open File";
-            this.btnOpenFile.UseVisualStyleBackColor = false;
+            this.BtnOpenFile.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnOpenFile.Font = new System.Drawing.Font("Lucida Console", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.BtnOpenFile.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.BtnOpenFile.Location = new System.Drawing.Point(305, 403);
+            this.BtnOpenFile.Name = "BtnOpenFile";
+            this.BtnOpenFile.Size = new System.Drawing.Size(150, 50);
+            this.BtnOpenFile.TabIndex = 11;
+            this.BtnOpenFile.Text = "Open File";
+            this.BtnOpenFile.UseVisualStyleBackColor = false;
+            this.BtnOpenFile.Click += new System.EventHandler(this.BtnOpenFile_Click);
             // 
             // label5
             // 
@@ -202,14 +205,14 @@
             this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnOpenFile);
+            this.Controls.Add(this.BtnOpenFile);
             this.Controls.Add(this.BtnSave);
-            this.Controls.Add(this.txtUncryptPass);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.txtSite);
-            this.Controls.Add(this.btnUncrypt);
-            this.Controls.Add(this.btnEncrypt);
+            this.Controls.Add(this.TxtUncryptPass);
+            this.Controls.Add(this.TxtPassword);
+            this.Controls.Add(this.TxtUser);
+            this.Controls.Add(this.TxtSite);
+            this.Controls.Add(this.BtnUncrypt);
+            this.Controls.Add(this.BtnEncrypt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -228,14 +231,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnEncrypt;
-        private System.Windows.Forms.Button btnUncrypt;
-        private System.Windows.Forms.TextBox txtSite;
-        private System.Windows.Forms.TextBox txtUser;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUncryptPass;
+        private System.Windows.Forms.Button BtnEncrypt;
+        private System.Windows.Forms.Button BtnUncrypt;
+        private System.Windows.Forms.TextBox TxtSite;
+        private System.Windows.Forms.TextBox TxtUser;
+        private System.Windows.Forms.TextBox TxtPassword;
+        private System.Windows.Forms.TextBox TxtUncryptPass;
         private System.Windows.Forms.Button BtnSave;
-        private System.Windows.Forms.Button btnOpenFile;
+        private System.Windows.Forms.Button BtnOpenFile;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button BtnSearch;
