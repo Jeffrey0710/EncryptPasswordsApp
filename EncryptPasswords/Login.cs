@@ -7,14 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace EncryptPasswords
 {
     public partial class Login : Form
     {
-        string user = "test";
-        string pass = "test";
-
         public Login()
         {
             InitializeComponent();
@@ -22,7 +20,10 @@ namespace EncryptPasswords
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if(TxtUser.Text != user || TxtPassword.Text != pass)
+            var user = ConfigurationManager.AppSettings["dtUser"];
+            var pass = ConfigurationManager.AppSettings["dtPass"];
+
+            if (TxtUser.Text != user || TxtPassword.Text != pass)
             {
                 if(TxtUser.Text != user)
                 {

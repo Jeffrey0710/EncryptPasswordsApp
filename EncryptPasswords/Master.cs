@@ -9,13 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
+using System.Configuration;
 
 namespace EncryptPasswords
 {
     public partial class Master : Form
     {
-        public static string KeyCode = "gkft93uif43hu514";
-
         public Master()
         {
             InitializeComponent();
@@ -150,11 +149,15 @@ namespace EncryptPasswords
 
         private void BtnEncrypt_Click(object sender, EventArgs e)
         {
+            var KeyCode = ConfigurationManager.AppSettings["keyCode"];
+
             TxtPassword.Text = Encrypt(TxtPassword.Text, KeyCode);
         }
 
         private void BtnUncrypt_Click(object sender, EventArgs e)
         {
+            var KeyCode = ConfigurationManager.AppSettings["keyCode"];
+
             TxtUncryptPass.Text = Uncrypt(TxtUncryptPass.Text, KeyCode);
         }
 
