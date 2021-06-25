@@ -85,11 +85,10 @@ namespace EncryptPasswords
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             String data;
-            Boolean find = false;
             char[] separate = { '|' };
             string[] array = new string[3];
 
-            StreamReader lect = File.OpenText("InfoFile.txt");
+            StreamReader lect = File.OpenText(@"C:\Users\Jeffrey\OneDrive\Escritorio\Jeff\InfoFile.txt");
             data = lect.ReadLine();
 
             while(data != null)
@@ -99,7 +98,6 @@ namespace EncryptPasswords
                 if (array[0].Trim().Equals(TxtSite.Text) & array[1].Trim().Equals(TxtUser.Text))
                 {
                     TxtUncryptPass.Text = array[2].Trim();
-                    find = true;
                 }
                 data = lect.ReadLine();
             }
@@ -114,12 +112,14 @@ namespace EncryptPasswords
             byte[] keyArray;
             byte[] passEncrypt = Encoding.UTF8.GetBytes(pass); 
 
-            keyArray = Encoding.UTF8.GetBytes(pkey);   
+            keyArray = Encoding.UTF8.GetBytes(pkey);
 
-            var tdes = new TripleDESCryptoServiceProvider();
-            tdes.Key = keyArray;
-            tdes.Mode = CipherMode.ECB;
-            tdes.Padding = PaddingMode.PKCS7;
+            var tdes = new TripleDESCryptoServiceProvider
+            {
+                Key = keyArray,
+                Mode = CipherMode.ECB,
+                Padding = PaddingMode.PKCS7
+            };
 
             ICryptoTransform cTransform = tdes.CreateEncryptor();
             byte[] result = cTransform.TransformFinalBlock(passEncrypt, 0, passEncrypt.Length);
@@ -133,12 +133,14 @@ namespace EncryptPasswords
             byte[] keyArray;
             byte[] passUncrypt = Convert.FromBase64String(pass);
 
-            keyArray = Encoding.UTF8.GetBytes(pkey);  
+            keyArray = Encoding.UTF8.GetBytes(pkey);
 
-            var tdes = new TripleDESCryptoServiceProvider();
-            tdes.Key = keyArray;
-            tdes.Mode = CipherMode.ECB;
-            tdes.Padding = PaddingMode.PKCS7;
+            var tdes = new TripleDESCryptoServiceProvider
+            {
+                Key = keyArray,
+                Mode = CipherMode.ECB,
+                Padding = PaddingMode.PKCS7
+            };
 
             ICryptoTransform cTransform = tdes.CreateDecryptor();
             byte[] result = cTransform.TransformFinalBlock(passUncrypt, 0, passUncrypt.Length); 

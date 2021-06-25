@@ -20,7 +20,8 @@ namespace EncryptPasswords
 
         private void BtnOpen_Click(object sender, EventArgs e)
         {
-            string ubi = @"C:\Users\Jeffrey\source\repos\EncryptPasswordsApp\EncryptPasswords\bin\Debug\InfoFile.txt";
+
+            string ubi = "InfoFile.txt";
 
             string readFile = File.ReadAllText(ubi);
             TxtData.Text = readFile;
