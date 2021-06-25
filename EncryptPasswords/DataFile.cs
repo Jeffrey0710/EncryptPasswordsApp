@@ -26,5 +26,12 @@ namespace EncryptPasswords
             string readFile = File.ReadAllText(ubi);
             TxtData.Text = readFile;
         }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+
+            DeleteFile formDeleteFile = new DeleteFile();
+            formDeleteFile.ShowDialog();
+        }
     }
 }

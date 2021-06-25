@@ -33,6 +33,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.BtnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnOpen
@@ -42,9 +43,9 @@
             this.BtnOpen.ForeColor = System.Drawing.Color.White;
             this.BtnOpen.Location = new System.Drawing.Point(23, 23);
             this.BtnOpen.Name = "BtnOpen";
-            this.BtnOpen.Size = new System.Drawing.Size(714, 49);
+            this.BtnOpen.Size = new System.Drawing.Size(503, 49);
             this.BtnOpen.TabIndex = 0;
-            this.BtnOpen.Text = "VIEW FILE";
+            this.BtnOpen.Text = "VIEW ALL FILES";
             this.BtnOpen.UseVisualStyleBackColor = false;
             this.BtnOpen.Click += new System.EventHandler(this.BtnOpen_Click);
             // 
@@ -104,12 +105,26 @@
             this.textBox3.Text = "PASSWORD";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // BtnDelete
+            // 
+            this.BtnDelete.BackColor = System.Drawing.Color.OrangeRed;
+            this.BtnDelete.Font = new System.Drawing.Font("Lucida Console", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.BtnDelete.ForeColor = System.Drawing.Color.White;
+            this.BtnDelete.Location = new System.Drawing.Point(532, 23);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(205, 49);
+            this.BtnDelete.TabIndex = 5;
+            this.BtnDelete.Text = "DELETE FILE";
+            this.BtnDelete.UseVisualStyleBackColor = false;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            // 
             // DataFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(760, 485);
+            this.Controls.Add(this.BtnDelete);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -131,5 +146,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button BtnDelete;
     }
 }
